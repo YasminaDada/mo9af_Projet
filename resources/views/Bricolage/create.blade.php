@@ -1,93 +1,54 @@
 @extends('Layouts/Layout')
-
-<div class="container">
-    <form>
-      <h2>Formulaire </h2>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="first">CIN</label>
-            <input type="text" name="CIN" class="form-control" placeholder="Tapez CIN">
-          </div>
+<title>Bricolage Index</title>
+@section('content')
+<div class="form">
+    <form action="{{ route('bricoloage.store') }}" method="POST"></form>
+    <div class="form-style-5">
+        <input type="text" name="CIN" placeholder="Votre CIN *">
+        <input type="text" name="Nom_employe" placeholder="Votre nom *">
+        <input type="text" name="Prenom_employe" placeholder="Votre Prenom *">
+        <input type="text" name="Numero_Tel" placeholder="Votre numero *">
+        <select id="job" name="categorie">
+          <option value="" selected>Choisir une catégorie *</option>
+          <option value="Electricien">Électricien</option>
+          <option value="Plombier">Plombier</option>
+          <option value="Amenagement">Service pour un aménagement intérieur</option>
+          <option value="Macon">Maçon</option>
+          <option value="Mecanicien">Mécanicien</option>
+          <option value="Menuiserie">Menuiserie</option>
+          <option value="Peintre">Peintre</option>
+          <option value="Serrurier">Serrurier</option>
+          <option value="Vitrier">Vitrier</option>
+          <option value="Artisanat">Artisanat</option>
+          <option value="jardinage">Jardinage</option>
+          <option value="forgeron">Forgeron</option>
+          <option value="Other">Other</option>
+        </select>
+        <select name="SousCategorie">
+          <option value="" selected>Choisir une sous catégorie d'artisanat</option>
+          <option value="Argile">Le travail de l'argile</option>
+          <option value="Or">Le travail de l'or</option>
+          <option value="Poterie">La poterie</option>
+          <option value="Bois">Le travail du bois</option>
+          <option value="Tapis">L'art du tapis</option>
+          <option value="Metal">Le travail du métal</option>
+          <option value="Textile">Le travail du textile</option>
+          <option value="Vannerie">La vannerie</option>
+          <option value="Broderie">La broderie</option>
+          <option value="Beaute">Soin et Beauté</option>
+        </select>
+        <input type="text" name="Email" placeholder="Votre Email">
+        <input type="text" name="Adresse" placeholder="Votre adresse *">
+        <div class="mb-1">
+            <label>Photo CIN *</label>
+            <input type="file" name="photo" class="form-control" placeholder="Choisir une image de CIN" >
         </div>
-        <!--  col-md-6   -->
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="last">Prénom</label>
-            <input type="text" name="Prenom_Bonne" class="form-control" placeholder="Tapez prenom..">
-          </div>
+        <div class="mb-1">
+            <label>Photo</label>
+            <input type="file" name="photo" class="form-control" placeholder="Choisir une image" >
         </div>
-        <!--  col-md-6   -->
-      </div>
-
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" class="form-control" placeholder="" id="company">
-          </div>
-
-
+        <input type="submit" value="Envoyer" />
+        </form>
         </div>
-        <!--  col-md-6   -->
-
-        <div class="col-md-6">
-
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" class="form-control" id="phone" placeholder="phone">
-          </div>
-        </div>
-        <!--  col-md-6   -->
-      </div>
-      <!--  row   -->
-
-
-      <div class="row">
-        <div class="col-md-6">
-
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="email">
-          </div>
-        </div>
-        <!--  col-md-6   -->
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="url">Your Website <small>Please include http://</small></label>
-            <input type="url" class="form-control" id="url" placeholder="url">
-          </div>
-
-        </div>
-        <!--  col-md-6   -->
-      </div>
-      <!--  row   -->
-
-
-      <label for="contact-preference">When is the best time of day to reach you?</label>
-      <div class="radio">
-        <label>
-          <input type="radio" name="contact-preference" id="contact-preference" value="am" checked>Morning
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="contact-preference" id="contact-preference" value="pm" checked>Evening
-        </label>
-      </div>
-
-      <label for="newsletter">Would you like to recieve our email newsletter?</label>
-      <div class="checkbox">
-
-        <label>
-          <input type="checkbox" value="Sure!" id="newsletter"> Sure!
-        </label>
-      </div>
-
-
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
   </div>
+@endsection

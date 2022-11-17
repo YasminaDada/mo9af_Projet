@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bricolage', function (Blueprint $table) {
+        Schema::create('bricolages', function (Blueprint $table) {
             $table->id();
             $table->string('CIN',60)->unique();
             $table->string('Nom_employe',60);
             $table->string('Prenom_employe',60);
             $table->string('Numero_Tel',60);
             $table->string('categorie');
-            $table->string('SousCategorie');
+            $table->string('SousCategorie')->nullable(true);
             $table->string('Email',60)->nullable(true);
             $table->string('Adresse',60);
             $table->string('photo',300)->nullable(true);
